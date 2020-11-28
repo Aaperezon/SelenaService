@@ -2,7 +2,7 @@ let config = {
     host: 'localhost',
     user: 'root',
     password: '',
-    database: 'agencia'
+    database: 'selena'
 };
 
 module.exports = config
