@@ -16,6 +16,10 @@ router.get('/sexo', carController.sexo)
 router.get('/categoriaDeEdad', carController.categoriaDeEdad)
 router.get('/numeroDeIndividuos', carController.numeroDeIndividuos)
 router.get('/identificadoPor', carController.identificadoPor)
+router.get('/revisarCoincidencia/:text', carController.revisarCoincidencia)
+router.get('/animalVistaActual/:text', carController.animalVistaActual)
+router.get('/localTable', carController.localTable)
+router.get('/filtro/:categoria/:seleccion', carController.filtro)
 
 
 module.exports = router

@@ -150,4 +150,54 @@ module.exports.identificadoPor = (request,response) => {
     })
 }
 
+module.exports.revisarCoincidencia = (request,response) => {
+    //response.send('Car list')
+    let sql = 'CALL RevisarCoincidencia(?)'
+    console.log(request.params.text.replace(/\+/g," "))
+    conexion.query(sql, [request.params.text.replace(/\+/g," ")], (error, results, fields) =>{
+        if(error){
+            response.send(error)
+        }
+        response.json(results[0])
+    })
+}
+
+
+module.exports.animalVistaActual = (request,response) => {
+    //response.send('Car list')
+    let sql = 'CALL AnimalVistaActual(?)'
+    console.log(request.params.text.replace(/\+/g," "))
+    conexion.query(sql, [request.params.text.replace(/\+/g," ")], (error, results, fields) =>{
+        if(error){
+            response.send(error)
+        }
+        response.json(results[0])
+    })
+}
+
+
+
+module.exports.localTable = (request,response) => {
+    //response.send('Car list')
+    let sql = 'CALL LocalTable()'
+    conexion.query(sql, (error, results, fields) =>{
+        if(error){
+            response.send(error)
+        }
+        response.json(results[0])
+    })
+}
+
+
+
+module.exports.filtro = (request,response) => {
+    //response.send('Car list')
+    let sql = 'CALL Filtro(?,?)'
+    conexion.query(sql, [request.params.categoria.replace(/\+/g," "),request.params.seleccion.replace(/\+/g," ")], (error, results, fields) =>{        
+        if(error){
+            response.send(error)
+        }
+        response.json(results[0])
+    })
+}
 
